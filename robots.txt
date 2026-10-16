@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aibizdirectoryglobal-maker.github.io/ai-business-directory/sitemap.xml
