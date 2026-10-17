@@ -1,0 +1,32 @@
+.listing-main { max-width:960px; padding-block:48px; }
+    .listing-intro h1 { font-size:clamp(36px,5vw,54px); }
+    .listing-intro .lead { max-width:720px; }
+    .listing-form { padding:30px; border:1px solid var(--line); border-radius:8px; background:white; }
+    .listing-fields { border:0; padding:0; margin:0; min-width:0; }
+    .listing-fields legend { font-size:23px; font-weight:650; padding:0; margin-bottom:22px; }
+    .field-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:22px; }
+    .field { min-width:0; }
+    .field-wide { grid-column:1/-1; }
+    .field label { display:block; font-size:14px; font-weight:650; margin-bottom:7px; }
+    .field label span { font-weight:400; color:var(--muted); }
+    .field input,.field textarea { width:100%; max-width:100%; border:1px solid #82978e; border-radius:4px; padding:12px; background:var(--paper); color:var(--ink); font:inherit; font-size:16px; }
+    .field textarea { resize:vertical; min-height:120px; }
+    .field input:focus-visible,.field textarea:focus-visible,.consent input:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+    .field .hint { font-size:12px; color:var(--muted); margin:6px 0 0; }
+    .consent { display:flex; gap:12px; align-items:flex-start; margin-top:26px; }
+    .consent input { flex-shrink:0; width:20px; height:20px; margin:3px 0 0; accent-color:var(--green); }
+    .consent label { font-size:14px; }
+    .listing-privacy { margin-top:28px; padding-top:24px; border-top:1px solid var(--line); }
+    .listing-privacy h2 { font-size:21px; }
+    .listing-privacy p { font-size:14px; }
+    .listing-submit { border:0; margin-top:12px; }
+    .listing-submit:disabled { background:#536861; color:white; cursor:not-allowed; }
+    .listing-note { font-size:13px; color:var(--muted); margin:12px 0 0; }
+    @media(max-width:720px) {
+      .listing-main { padding-block:32px; }
+      .listing-form { padding:20px; }
+      .field-grid { grid-template-columns:minmax(0,1fr); }
+    }
+.validation-summary-errors,.field-validation-error { color:#8a2525; }
+.input-validation-error { border-color:#8a2525 !important; }
+.trap { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }

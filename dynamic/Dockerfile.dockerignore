@@ -1,0 +1,16 @@
+**
+!dynamic/AiBusinessDirectory.Web/AiBusinessDirectory.Web.csproj
+!dynamic/AiBusinessDirectory.Web/appsettings.json
+!dynamic/AiBusinessDirectory.Web/Program.cs
+!dynamic/AiBusinessDirectory.Web/PublicContent.cs
+!dynamic/AiBusinessDirectory.Web/Assets/listing.css
+!dynamic/AiBusinessDirectory.Web/Data/ListingDbContext.cs
+!dynamic/AiBusinessDirectory.Web/Pages/_ViewImports.cshtml
+!dynamic/AiBusinessDirectory.Web/Pages/RequestListing.cshtml
+!dynamic/AiBusinessDirectory.Web/Pages/RequestListing.cshtml.cs
+!index.html
+!sitemap.xml
+!google33bc54793ff2be2c.html
+!assets/styles.css
+!businesses/golden-harbor.html
+!comparisons/golden-harbor-vs-asm.html

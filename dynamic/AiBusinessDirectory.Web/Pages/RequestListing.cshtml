@@ -1,0 +1,61 @@
+@page "/request-listing.html"
+@model RequestListingModel
+@{ Layout = null; }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request a business listing in AI Business Directory. Business information is reviewed before publication.">
+  <meta name="robots" content="noindex, nofollow">
+<title>List Your Business | AI Business Directory</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/listing.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to listing request</a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">AI<span>BD</span></span><span>AI Business Directory</span></a>
+    <nav aria-label="Main navigation" style="flex-wrap:wrap;row-gap:10px"><a href="index.html">Home</a><a href="businesses/golden-harbor.html">Featured business</a><a href="request-listing.html" aria-current="page">List Your Business</a></nav>
+  </header>
+  <main id="main" class="wrap listing-main">
+    <section class="listing-intro" aria-labelledby="listing-title">
+      <p class="eyebrow">Business listing request</p>
+      <h1 id="listing-title">List Your Business</h1>
+      <p class="lead">Share the essentials about your business for review. A request does not create a listing automatically or guarantee approval.</p>
+      <aside class="important-note" aria-labelledby="test-mode-title">
+        <h2 id="test-mode-title">Development preview — test requests only</h2>
+        <p>This application is for disposable test data. Do not submit real personal or business information. Requests saved here may be lost when the test host restarts. No submitted business is published automatically.</p>
+      </aside>
+      @if (Model.Submitted)
+      {
+        <aside class="important-note" role="status"><h2>Test request saved</h2><p>Your test request is Pending. It has not been published or approved.</p></aside>
+      }
+    </section>
+<form id="listing-request" class="listing-form" method="post" asp-page="/RequestListing" aria-describedby="privacy-notice"><div asp-validation-summary="All" role="alert"></div>
+      <fieldset class="listing-fields">
+        <legend>Business and contact details</legend>
+        <p class="small muted">All fields are required unless marked optional.</p>
+        <div class="field-grid">
+          <div class="field"><label for="business-name">Business name</label><input id="business-name" asp-for="Input.BusinessName" type="text" autocomplete="organization" maxlength="160" required></div>
+          <div class="field"><label for="official-website">Official website URL</label><input id="official-website" asp-for="Input.OfficialWebsite" type="url" inputmode="url" autocomplete="url" pattern="https?://.+" maxlength="2048" aria-describedby="website-hint" required><p id="website-hint" class="hint">Use the full public website address, starting with https:// or http://.</p></div>
+          <div class="field"><label for="country">Country</label><input id="country" asp-for="Input.Country" type="text" autocomplete="country-name" maxlength="100" required></div>
+          <div class="field"><label for="business-category">Business category</label><input id="business-category" asp-for="Input.BusinessCategory" type="text" maxlength="120" aria-describedby="category-hint" required><p id="category-hint" class="hint">For example, accounting, software or hospitality.</p></div>
+          <div class="field field-wide"><label for="contact-email">Contact email</label><input id="contact-email" asp-for="Input.ContactEmail" type="email" inputmode="email" autocomplete="email" maxlength="254" aria-describedby="email-hint" required><p id="email-hint" class="hint">For questions about your request. This address will not automatically be published.</p></div>
+          <div class="field field-wide"><label for="business-description">Short business description</label><textarea id="business-description" asp-for="Input.Description" rows="5" maxlength="1000" aria-describedby="description-hint" required></textarea><p id="description-hint" class="hint">Describe what the business does and its main services. Maximum 1,000 characters.</p></div>
+          <div class="field field-wide"><label for="additional-notes">Additional notes <span>(optional)</span></label><textarea id="additional-notes" asp-for="Input.AdditionalNotes" rows="4" maxlength="2000" aria-describedby="notes-hint"></textarea><p id="notes-hint" class="hint">Relevant public source links or context for review. Maximum 2,000 characters.</p></div>
+        </div>
+        <div class="consent"><input id="listing-consent" asp-for="Input.Consent" type="checkbox" required><label for="listing-consent">@RequestListingModel.ConsentStatement <strong>Required.</strong></label></div>
+      <div class="trap" aria-hidden="true"><label for="website-fax">Leave this field empty</label><input asp-for="Input.WebsiteFax" id="website-fax" type="text" tabindex="-1" autocomplete="off"></div></fieldset>
+      <section class="listing-privacy" aria-labelledby="privacy-title">
+        <h2 id="privacy-title">How your information will be used</h2>
+        <p id="privacy-notice">Submitted information will be used to review your listing request and follow up with you. Contact information will not automatically become public. Approved business information may be published after review. This test application processes requests directly and stores them in its local test database. Do not send sensitive information.</p>
+        <p class="muted">Include only information needed for the request. Do not provide passwords, identity documents, bank details or confidential customer information.</p>
+      </section>
+      <button id="submit-listing" class="button listing-submit" type="submit">Submit test listing request</button>
+      <p class="listing-note">Requests will be reviewed manually. There is no automatic listing approval.</p>
+    </form>
+  </main>
+  <footer class="site-footer wrap"><span>AI Business Directory <span class="muted">/ Business listing requests</span></span><a href="index.html">Directory home</a></footer>
+</body>
+</html>
