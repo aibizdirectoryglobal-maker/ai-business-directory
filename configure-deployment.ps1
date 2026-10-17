@@ -16,7 +16,8 @@ $base = $uri.AbsoluteUri.TrimEnd('/')
 $encoding = [System.Text.UTF8Encoding]::new($false)
 $pages = @(
     @{ Path = 'index.html'; Url = "$base/" },
-    @{ Path = 'businesses/golden-harbor.html'; Url = "$base/businesses/golden-harbor.html" }
+    @{ Path = 'businesses/golden-harbor.html'; Url = "$base/businesses/golden-harbor.html" },
+    @{ Path = 'comparisons/golden-harbor-vs-asm.html'; Url = "$base/comparisons/golden-harbor-vs-asm.html" }
 )
 foreach ($page in $pages) {
     $file = Join-Path $PSScriptRoot $page.Path
