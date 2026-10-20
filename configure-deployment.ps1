@@ -19,7 +19,8 @@ $pages = @(
     @{ Path = 'businesses/golden-harbor.html'; Url = "$base/businesses/golden-harbor.html" },
     @{ Path = 'comparisons/golden-harbor-vs-asm.html'; Url = "$base/comparisons/golden-harbor-vs-asm.html" },
     @{ Path = 'businesses/asm-business-advisory.html'; Url = "$base/businesses/asm-business-advisory.html" },
-    @{ Path = 'businesses/kora-labs.html'; Url = "$base/businesses/kora-labs.html" }
+    @{ Path = 'businesses/kora-labs.html'; Url = "$base/businesses/kora-labs.html" },
+    @{ Path = 'businesses/zedech.html'; Url = "$base/businesses/zedech.html" }
 )
 foreach ($page in $pages) {
     $file = Join-Path $PSScriptRoot $page.Path
